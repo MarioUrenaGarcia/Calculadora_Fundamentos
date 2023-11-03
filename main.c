@@ -21,10 +21,12 @@ int sumar_arreglo(int num[]);
 
 void eq_cuadr(double a, double b, double c, double *r1, double *r2);
 
-int introducir_numero();
+int introducir_numero_positivo();
 int introducir_numero_impar();
 
 void circulo_esfera(double r, double *peri, double *area, double *vol);
+
+void estadistica(int arr[], int size, double *media, double *mediana, double *moda);
 
 //Main ----------------------------------------------------------------------------
 
@@ -41,6 +43,8 @@ int main (void)
   int b = 0;
   double v1,v2,v3,res1,res2, res3;
   int i;
+  int numeros[256];
+  
 //Procesos
 
   printf("\n\n¿Que tipo de operación quieres hacer?     ");
@@ -195,7 +199,7 @@ int main (void)
       case 'i':
       {
       
-        a = introducir_numero();
+        a = introducir_numero_positivo();
 
         for(i=0;i<=a;i++) //Bucle que define en que piso estamos del triangulo
           {
@@ -224,7 +228,7 @@ int main (void)
       {
         printf("\n\n\tEsfera\n\n");
         
-        a = introducir_numero();
+        a = introducir_numero_positivo();
         circulo_esfera(a,&res1,&res2,&res3);
         
         printf("\n\nP = %f\nA = %f\nV = %f", res1,res2,res3);
@@ -232,10 +236,14 @@ int main (void)
         
         break;
       }
+
+    case 'm':
+      {
+	printf("\n\n\tMedia Mediana y Moda\n\n");
+	break;
+      }
          
     }
-
-
 //FIN DEL PROGRAMA
   
   printf("\n\n\tPrograma Finalizado con ÉXTO\n\n");
@@ -286,7 +294,7 @@ void eq_cuadr(double a, double b, double c, double *r1, double *r2)
  *   num_usuario = 4
  *
  */
-int introducir_numero()
+int introducir_numero_positivo()
 {
   int n; //Numero que introduce el usuario
   
@@ -297,7 +305,7 @@ int introducir_numero()
   if(n < 0)
     {
       printf("\tERROR: Introduzca un numero valido\n\n");
-      introducir_numero();
+      introducir_numero_positivo();
     }
   else
     {
@@ -346,4 +354,8 @@ void circulo_esfera(double r, double *peri, double *area, double *vol)
     *area = p * (r*r);
     *vol = ((4) * (p) * (r*r*r)) / 3;
     printf("\n\n%f",p);
+}
+
+void estadistica(int arr[], int size, double *media, double *mediana, double *moda)
+{
 }

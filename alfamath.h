@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void leer(int num[]);
 int sumar_arreglo(int num[]);
 
