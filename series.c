@@ -1,17 +1,17 @@
 #include<stdio.h>
 int factorial_rec(int numero)
 {
-    int res = 0;
+  int res = 0;
     
-    if(numero == 0)
+  if(numero == 0)
     {
-        return 1;
+      return 1;
     }
     
-    else
+  else
     {
-        res = factorial_rec(numero-1);
-        return numero*res;
+      res = factorial_rec(numero-1);
+      return numero*res;
     }
 }
 
