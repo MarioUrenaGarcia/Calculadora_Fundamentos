@@ -44,7 +44,7 @@ void estadistica(int arr[], int size, double *media, double *mediana, double *mo
 
 //Main ----------------------------------------------------------------------------
 
-int main (void)
+int main (int argc, char *argv[])
 {
   printf("\n\n\tEste código fue creado por Mario Ureña García\n\n");
 
@@ -62,11 +62,18 @@ int main (void)
   OPERACION save[10];
   
   //Procesos
+
+  sscanf(argv[1],"%c", procedimiento);
+  sscanf(argv[2],"%d", a)
+  sscanf(argv[3],"%d", b);
   
   while(1)
     {
-      printf("\n\n¿Que tipo de operación quieres hacer?     ");
-      scanf("%c", &procedimiento);
+      if(argc < 2)
+	{
+	  printf("\n\n¿Que tipo de operación quieres hacer?     ");
+	  scanf("%c", &procedimiento);
+	}
 
       switch(procedimiento)
 	{
